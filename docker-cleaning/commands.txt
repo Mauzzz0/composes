@@ -1,0 +1,2 @@
+docker ps -a   #for check all docker containers
+docker volume rm TAB TAB   #check all volumes and then delete
