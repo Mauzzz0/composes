@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  mysql-composes:
+    container_name: mysql-composes-container
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - mysql_composes_container:/var/lib/mysql
+
+volumes:
+  mysql_composes_container:
