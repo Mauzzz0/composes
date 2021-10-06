@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  clickhouse-composes:
+    container_name: clickhouse-composes-container
+    image: yandex/clickhouse-server:20.12.3.3
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '200k'
+        max-file: '10'
+    volumes:
+      - clickhouse_composes_container:/var/lib/clickhouse
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+
+volumes:
+  clickhouse_composes_container:
