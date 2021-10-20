@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  mssql-composes:
+    container_name: mssql-composes-container
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password1
+    volumes:
+      - mssql_composes_container:/var/opt/mssql
+    ports:
+      - "1433:1433"
+
+volumes:
+  mssql_composes_container:
