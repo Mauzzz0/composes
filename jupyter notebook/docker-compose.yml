@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  jupyter-composes:
+    container_name: jupyter-composes-container
+    image: jupyter/scipy-notebook:latest
+    ports:
+      - 10000:8888
+    networks:
+      - default
+    logging:
+      driver: json-file
+    volumes:
+      - jupyter_composes_container:/home/jovyan
+
+networks:
+  default:
+    driver: overlay
+volumes:
+  jupyter_composes_container:
