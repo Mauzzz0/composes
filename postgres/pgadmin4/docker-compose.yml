@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  pgadmin:
+    container_name: pgadmin-composes-container
+    network_mode: "host"
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: me@me.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "80:80"
+    volumes:
+      - pgadmin_composes_container:/var/lib/pgadmin
+
+volumes:
+  pgadmin_composes_container:
